@@ -1,24 +1,92 @@
 header{
     background-color: #0A1D41;
-    height: 50px;
+    height: 80px;
 }        
 
 header #left{
-    padding: 10px 10px 10px 20px;
+    padding: 10px 0px 0px 20px;
     float: left;
 }
 
-header #right{
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* header #right{
     padding: 10px 50px 10px 10px;
     float: right;
+} */
+
+li {
+    float: right;
 }
-        
-.container {
+
+/* Stole this https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu */
+header ul li {
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: medium;
+  padding: 20px;
+  text-decoration: none;
+}
+
+body {
     background-color: #9AA7AC;
 }
 
 
+/* .left{
+    padding: 10px 10px 10px 20px;
+    float: left;
+}
+
+.right{
+    padding: 10px 10px 10px 40px;
+    float: left;
+    border: black 1px solid;
+} */
+
+.container .hero{
+    padding: 10px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
 .p{
+    font-family: Heeblo;
+    font-size: 20px;
+}
+
+.projects{
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.projects:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.projectCards{
+    background-color: #D0F4EA;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    word-wrap: break-word;
+    float: left; 
+    width: 40%;
+    margin-left: 20px;
+    justify-content: center;
+
+}
+
+
+.description{
     font-family: Heeblo;
     font-size: 20px;
 }
