@@ -1,0 +1,24 @@
+header{
+    background-color: #0A1D41;
+    height: 50px;
+}        
+
+header #left{
+    padding: 10px 10px 10px 20px;
+    float: left;
+}
+
+header #right{
+    padding: 10px 50px 10px 10px;
+    float: right;
+}
+        
+.container {
+    background-color: #9AA7AC;
+}
+
+
+.p{
+    font-family: Heeblo;
+    font-size: 20px;
+}
