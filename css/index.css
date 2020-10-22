@@ -50,38 +50,58 @@ body {
     border: black 1px solid;
 } */
 
-.container .hero{
+.heroContainer{
+    display: grid;
     padding: 10px;
-    margin: 0 auto;
-    justify-content: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    /* width: 100%; */
+    align-content: center;
+/*     margin: 0 auto; */
+        
+
+}
+
+
+.hero{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.p{
-    font-family: Heeblo;
-    font-size: 20px;
-}
 
 .projects{
     font-size: 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 5px;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    align-content: center;
 }
 
-.projects:after {
+/* .projects:after {
   content: "";
   display: table;
   clear: both;
-}
+  
+} */
 
 .projectCards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #D0F4EA;
     font-size: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     word-wrap: break-word;
-    float: left; 
-    width: 40%;
+    /* float: left;  */
+    /* width: 40%; */
     margin-left: 20px;
-    justify-content: center;
+    padding: 10px;
+    
+    /* flex-direction: column;
+    align-content: center; */
 
 }
 
@@ -90,3 +110,14 @@ body {
     font-family: Heeblo;
     font-size: 20px;
 }
+
+.bio{
+    font-family: Heeblo;
+    font-size: 20px;
+}
+
+/* .p{
+    font-family: Heeblo;
+    font-size: 20px;
+    justify-content: center;
+} */
