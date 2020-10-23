@@ -29,7 +29,7 @@ header ul li {
   display: block;
   color: white;
   text-align: center;
-  font-size: medium;
+  font-size: 20px;
   padding: 20px;
   text-decoration: none;
 }
@@ -94,7 +94,7 @@ body {
     background-color: #D0F4EA;
     font-size: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
     /* float: left;  */
     /* width: 40%; */
     margin-left: 20px;
