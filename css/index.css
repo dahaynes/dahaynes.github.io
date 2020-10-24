@@ -52,14 +52,11 @@ body {
 
 .heroContainer{
     display: grid;
-    padding: 10px;
     grid-template-columns: 100%;
     grid-template-rows: 100%;
     /* width: 100%; */
     align-content: center;
 /*     margin: 0 auto; */
-        
-
 }
 
 
@@ -67,8 +64,40 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-image: url("../img/technology_map_v3b.jpeg");
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+
 }
 
+.heroText {
+    font-family: 'Monotype Corsiva', 'Arial';
+    font-size: 100px;
+    color:#D0F4EA;
+    text-shadow: 2px 2px #0A1D41;
+    
+}
+
+.bioContainer{
+    display: grid;
+    padding-top: 10px;
+    grid-template-columns: 25% 75%;;
+    grid-template-rows: 100%;
+    align-content: center;
+}
+
+
+.bio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Heeblo', 'Arial';
+    font-size: 30px;
+
+}
 
 .projects{
     font-size: 50px;
@@ -86,6 +115,10 @@ body {
   clear: both;
   
 } */
+h1{
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 .projectCards{
     display: flex;
@@ -107,14 +140,10 @@ body {
 
 
 .description{
-    font-family: Heeblo;
+    font-family: 'Heeblo';
     font-size: 20px;
 }
 
-.bio{
-    font-family: Heeblo;
-    font-size: 20px;
-}
 
 /* .p{
     font-family: Heeblo;
