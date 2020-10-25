@@ -1,4 +1,4 @@
-[
+var metadata = [
     {
         "1": {
             "type": "peer-review",
@@ -20,7 +20,7 @@
     {
         "3": {
             "type": "peer-review",
-            "title": "Terra Populus’ Architecture for Integrated Big Geospeatial Services",
+            "title": "Terra Populus’ Architecture for Integrated Big Geospatial Services",
             "Journal": "Transactions in GIS",
             "Year": 2017,
             "Authors": "Haynes, D., Manson, S., Shook, E.,"
@@ -36,3 +36,5 @@
         }
     }
 ]
+
+console.log()

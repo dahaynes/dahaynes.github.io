@@ -11,7 +11,7 @@ header #left{
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-top: 10px;
   overflow: hidden;
 }
 
@@ -20,7 +20,7 @@ ul {
     float: right;
 } */
 
-li {
+header ul li {
     float: right;
 }
 
@@ -144,7 +144,43 @@ h1{
     font-size: 20px;
 }
 
+footer{
+    background-color: #E4E4E4;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 25% 50% 25%;
+    height: 45px;
+}
 
+
+.links ul{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    /* height: 100%; */
+    padding-top: 15px;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-family: 'Heeblo';
+}
+
+.links ul li {
+    width: 100%;
+}
+
+.social ul{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding-top: 15px;
+}
+
+.social li{
+    float: right;
+    margin-left: 0px;
+    margin-right: 20px;
+    font-family: 'Heeblo';
+}
 /* .p{
     font-family: Heeblo;
     font-size: 20px;
