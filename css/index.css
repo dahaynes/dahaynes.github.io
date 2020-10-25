@@ -1,4 +1,7 @@
-header{
+.navBar{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 25% 50% 25%;
     background-color: #0A1D41;
     height: 80px;
 }        
@@ -20,19 +23,44 @@ ul {
     float: right;
 } */
 
-header ul li {
+/* header ul li {
+    
+} */
+
+/*  .navMenu ul{
+    /* display: block; 
     float: right;
+    align-items: center;
+    justify-items: center;
+    padding-top: 15px;
+*/
+
+.navMenu ul{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    /* height: 100%; */
+    padding-top: 20px;
+    
+    margin-right: 20px;
+    font-size: 30px;
+    color: white;
 }
 
+.navMenu ul li {
+    width: 100%;
+}
+
+
 /* Stole this https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu */
-header ul li {
+/* header ul li {
   display: block;
   color: white;
   text-align: center;
   font-size: 30px;
   padding: 20px;
   text-decoration: none;
-}
+} */
 
 body {
     background-color: #9AA7AC;
@@ -186,3 +214,66 @@ footer{
     font-size: 20px;
     justify-content: center;
 } */
+
+
+
+.articleCard{
+  margin: 20px 20px;
+  padding-left: 10px;
+  display: grid;
+  min-height: 200px;
+  width: 100%;
+
+  border: black solid 1px;
+  grid-template-columns:  repeat(6,fr);   /* 2fr 1fr    repeat(12,fr)*/
+  grid-template-rows: repeat(4,fr);
+  grid-template-areas: 
+  "articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle"
+  "author author author author . articleYear"
+  "articleJournal articleJournal articleJournal articleJournal articleJournal ."
+  "doi doi . abstract highlights cite";
+}
+
+.articleTitle {
+    grid-area: articleTitle;
+    font-size: 40px;
+}
+
+.author {
+    grid-area: author;
+}
+
+.articleYear {
+    grid-area: articleYear;
+
+}
+
+.articleJournal {
+    grid-area: articleJournal;
+    font-style: italic;
+}
+
+.doi{
+    grid-area: doi;
+}
+
+.abstract{
+    grid-area: abstract;
+}
+
+.articleDescription{
+    display: none;
+}
+
+.citation{
+    grid-area: cite;
+}
+
+
+.articleHighlights{
+    grid-area: highlights;
+}
+.highlightText{
+    display: none;
+    
+}
