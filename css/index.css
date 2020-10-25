@@ -251,6 +251,7 @@ footer{
 .articleJournal {
     grid-area: articleJournal;
     font-style: italic;
+    font-size: 16px;
 }
 
 .doi{
@@ -259,10 +260,12 @@ footer{
 
 .abstract{
     grid-area: abstract;
+    cursor: pointer;
 }
 
 .articleDescription{
     display: none;
+    font-size: 12px;
 }
 
 .citation{
@@ -274,6 +277,5 @@ footer{
     grid-area: highlights;
 }
 .highlightText{
-    display: none;
-    
+    display: none;  
 }

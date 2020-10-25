@@ -19,11 +19,11 @@ function loadMetaData(jsonArray) {
                             <div class="author">${arrayItem.author}</div> <div class="articleYear">${arrayItem.year} </div><div class="articleJournal">${arrayItem.journal} </div> 
                             <div class="doi"><a href="${arrayItem.doi}">Get the article</a></div>
                             <div class="abstract">See the abstract</div>
-                            <div class="articleDescription">${arrayItem.abstract}</div>
                             <div class="articleHighlights">See Article Highlights</div>
                             <div class="highlightText">${highlighlist}</div>
                             <div class="citation">${arrayItem.cite}</div>
                             </div>
+                            <div class="articleDescription">${arrayItem.abstract}</div>
                             `
         $("#outputDiv").append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
@@ -43,7 +43,11 @@ $(document).ready(function () {
 
     $(".abstract").on("click", function () {
         console.log("I was clicked")
-
+        if ($(this).hasClass("abstract")) {
+            $(".articleDescription").slideToggle();
+        }
+        
+        /* $(".articleDescription").css("display", "block") */
 
     });
 
