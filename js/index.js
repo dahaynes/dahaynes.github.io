@@ -22,8 +22,9 @@ function loadMetaData(jsonArray) {
                             <div class="articleHighlights">See Article Highlights</div>
                             <div class="highlightText">${highlighlist}</div>
                             <div class="citation">${arrayItem.cite}</div>
+                            <div class="articleDescription invisible">${arrayItem.abstract}</div>
                             </div>
-                            <div class="articleDescription">${arrayItem.abstract}</div>
+
                             `
         $("#outputDiv").append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
@@ -43,11 +44,20 @@ $(document).ready(function () {
 
     $(".abstract").on("click", function () {
         console.log("I was clicked")
-        if ($(this).hasClass("abstract")) {
-            $(".articleDescription").slideToggle();
+        if ($(this).siblings().hasClass("invisible") )
+         {
+            /* var t = $(this).siblings().hasClass("invisible"); */
+            console.log("Making visible")
+
+            $(this).siblings(".articleDescription").removeClass("invisible");
+
+            $(".articleCard").css('grid-template-areas',
+                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite" "articleDescription articleDescription articleDescription articleDescription articleDescription articleDescription"');
+
+        } else {
+            $(this).siblings(".articleDescription").addClass("invisible");
         }
-        
-        /* $(".articleDescription").css("display", "block") */
+
 
     });
 

@@ -226,12 +226,13 @@ footer{
 
   border: black solid 1px;
   grid-template-columns:  repeat(6,fr);   /* 2fr 1fr    repeat(12,fr)*/
-  grid-template-rows: repeat(4,fr);
+  grid-template-rows: repeat(5,fr);
   grid-template-areas: 
   "articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle"
   "author author author author . articleYear"
   "articleJournal articleJournal articleJournal articleJournal articleJournal ."
-  "doi doi . abstract highlights cite";
+  "doi doi . abstract highlights cite"
+  ". . . . . .";
 }
 
 .articleTitle {
@@ -264,8 +265,8 @@ footer{
 }
 
 .articleDescription{
-    display: none;
     font-size: 12px;
+    grid-area: articleDescription;
 }
 
 .citation{
@@ -278,4 +279,8 @@ footer{
 }
 .highlightText{
     display: none;  
+}
+
+.invisible{
+    display: none
 }
