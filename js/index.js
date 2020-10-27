@@ -3,13 +3,13 @@ function loadMetaData(jsonArray) {
     
     $.each(jsonArray, function(arrayKey, arrayItem ) {
         console.log(arrayItem.highlights)
-        var theHighlights = '<ul>'
+        var theHighlights = ''
          $.each(arrayItem.highlights, function(c, highlight){
-            console.log(highlight)
-            theHighlights = theHighlights+  `<li>${highlight}</li>`
-             console.log(theHighlights)
+            console.log(c, highlight)
+             theHighlights = theHighlights + `<div class="highlightText highlight${c} invisible">${highlight}</div>`
+             /* console.log(theHighlights) */
         });
-        var highlighlist = theHighlights + "</ul>";
+        var highlighlist = theHighlights;
         console.log(highlighlist)
 
 
@@ -17,15 +17,13 @@ function loadMetaData(jsonArray) {
         var articleCard = `<div class="articleCard">
                             <div class="articleTitle">${arrayItem.title} </div> 
                             <div class="author">${arrayItem.author}</div> <div class="articleYear">${arrayItem.year} </div><div class="articleJournal">${arrayItem.journal} </div> 
-                            <div class="doi"><a href="${arrayItem.doi}">Get the article</a></div>
+                            <div class="doi"><a href="https://doi.org/${arrayItem.doi}">Get the article</a></div>
                             <div class="abstract">See the abstract</div>
                             <div class="articleHighlights">See Article Highlights</div>
-                            <div class="highlightText">${highlighlist}</div>
+                            ${highlighlist}
                             <div class="citation">${arrayItem.cite}</div>
                             <div class="articleDescription invisible">${arrayItem.abstract}</div>
-                            </div>
-
-                            `
+                            </div>`
         $("#outputDiv").append(articleCard)
         /* console.log(jsonArray[arrayItem].year) */
         /* console.log(arrayItem.year) */
@@ -42,10 +40,9 @@ $(document).ready(function () {
 
     $(".abstract").on("click", function () {
         //console.log("I was clicked")
-        if ($(this).siblings().hasClass("invisible") )
-         {
-            /* var t = $(this).siblings().hasClass("invisible"); */
-            //console.log("Making visible")
+        if ($(this).siblings(".articleDescription").hasClass("invisible") ){
+            //hide the other class
+            $(this).siblings(".highlightText").addClass("invisible");
 
             $(this).siblings(".articleDescription").removeClass("invisible");
             $(this).parent().css('grid-template-columns', 'repeat(6,fr);');
@@ -54,6 +51,31 @@ $(document).ready(function () {
                 '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite" "articleDescription articleDescription articleDescription articleDescription articleDescription articleDescription"');
 
         } else {
+            $(this).siblings(".articleDescription").addClass("invisible");
+            $(this).siblings(".highlightText").addClass("invisible");
+            $(this).parent(".articleCard").css('grid-template-rows', 'repeat(4,fr);')
+            $(this).parent(".articleCard").css('grid-template-areas',
+                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite"');
+        }
+
+
+    });
+
+    $(".articleHighlights").on("click", function () {
+        //console.log("I was clicked")
+        if ($(this).siblings(".highlightText").hasClass("invisible")) {
+            $(this).siblings(".articleDescription").addClass("invisible");
+            /* var t = $(this).siblings().hasClass("invisible"); */
+            console.log("Making visible")
+
+            $(this).siblings(".highlightText").removeClass("invisible"); 
+            $(this).parent(".articleCard").css('grid-template-columns', 'repeat(6,fr);');
+            $(this).parent(".articleCard").css('grid-template-rows', 'repeat(5,fr);');
+            $(this).parent(".articleCard").css('grid-template-areas',
+                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite" "highlight0 highlight0 highlight1 highlight1 highlight2 highlight2"');
+
+        } else {
+            $(this).siblings(".highlightText").addClass("invisible");
             $(this).siblings(".articleDescription").addClass("invisible");
             $(this).parent(".articleCard").css('grid-template-rows', 'repeat(4,fr);')
             $(this).parent(".articleCard").css('grid-template-areas',

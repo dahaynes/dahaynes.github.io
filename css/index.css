@@ -297,10 +297,22 @@ footer{
 .articleHighlights{
     grid-area: highlights;
 }
-.highlightText{
+/* .highlightText{
+    grid-area: highlightText;
     display: none;  
+} */
+
+.highlight0{
+    grid-area: highlight0;
 }
 
+.highlight1{
+    grid-area: highlight1;
+}
+
+.highlight2{
+    grid-area: highlight2;
+}
 .invisible{
     display: none
 }
