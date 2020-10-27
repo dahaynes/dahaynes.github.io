@@ -36,34 +36,45 @@ function loadMetaData(jsonArray) {
 };
 
 
-
-
 $(document).ready(function () {
     
     loadMetaData(metadata);
 
     $(".abstract").on("click", function () {
-        console.log("I was clicked")
+        //console.log("I was clicked")
         if ($(this).siblings().hasClass("invisible") )
          {
             /* var t = $(this).siblings().hasClass("invisible"); */
-            console.log("Making visible")
+            //console.log("Making visible")
 
             $(this).siblings(".articleDescription").removeClass("invisible");
-
-            $(".articleCard").css('grid-template-areas',
+            $(this).parent().css('grid-template-columns', 'repeat(6,fr);');
+            $(this).parent().css('grid-template-rows', 'repeat(5,fr);');
+            $(this).parent().css('grid-template-areas',
                 '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite" "articleDescription articleDescription articleDescription articleDescription articleDescription articleDescription"');
 
         } else {
             $(this).siblings(".articleDescription").addClass("invisible");
+            $(this).parent(".articleCard").css('grid-template-rows', 'repeat(4,fr);')
+            $(this).parent(".articleCard").css('grid-template-areas',
+                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite"');
         }
 
 
     });
 
+    $(".dropDown").on("click", function () {
+        /* console.log("I was clicked") */
+        $(".menuItems").slideToggle();
+
+    })
+
 
     
 });
+
+
+
 
 
 var metadata = [
@@ -84,14 +95,19 @@ var metadata = [
         "journal": "journal of Geographical Systems",
         "year": 2018,
         "author": "Haynes, D., Jokela, A., Manson, S.,",
-        "doi": "10.1007/s10109-018-0277-2"
+        "doi": "10.1007/s10109-018-0277-2",
+        "highlights": ["Big heterogenous spatial big data is very complex"],
+        "abstract": "Big Geo Data promises tremendous benefits to the GIS Science community in particular and the broader scientific community in general, but has been primarily of use to the relatively small body of GIScientists who possess the specialized knowledge and methods necessary for working with this class of data. Much of the greater scientific community is not equipped with the expert knowledge and techniques necessary to fully take advantage of the promise of big spatial data. IPUMS-Terra provides integrated spatiotemporal data to these scholars by simplifying access to thousands of raster and vector datasets, integrating them and providing them in formats that are useable to a broad array of research disciplines. IPUMS-Terra exemplifies a new class of National Spatial Data Infrastructure because it connects a large spatial data repository to advanced computational resources, allowing users to access the needle of information they need from the haystack of big spatial data. The project is trailblazing in its commitment to the open sharing of spatial data and spatial tool development, including describing its architecture, process development workflows, and openly sharing its products for the general use of the scientific community."
+
+
     },
     {
         "type": "peer-review",
         "title": "Terra Populus’ Architecture for Integrated Big Geospatial Services",
         "journal": "Transactions in GIS",
         "year": 2017,
-        "author": "Haynes, D., Manson, S., Shook, E.,"
+        "author": "Haynes, D., Manson, S., Shook, E.,",
+        "abstract": "Big geospatial data is an emerging sub‐area of geographic information science, big data, and cyberinfrastructure. Big geospatial data poses two unique challenges. First, raster and vector data structures and analyses have developed on largely separate paths for the last 20 years. This is creating an impediment to geospatial researchers seeking to utilize big data platforms that do not promote heterogeneous data types. Second, big spatial data repositories have yet to be integrated with big data computation platforms in ways that allow researchers to spatio‐temporally analyze big geospatial datasets. IPUMS‐Terra, a National Science Foundation cyberInfrastructure project, addresses these challenges by providing a unified framework of integrated geospatial services which access, analyze, and transform big heterogeneous spatio‐temporal data. As IPUMS‐Terra's data volume grows, we seek to integrate geospatial platforms that will scale geospatial analyses and address current bottlenecks within our system. However, our work shows that there are still unresolved challenges for big geospatial analysis. The most pertinent is that there is a lack of a unified framework for conducting scalable integrated vector and raster data analysis. We conducted a comparative analysis between PostgreSQL with PostGIS and SciDB and concluded that SciDB is the superior platform for scalable raster zonal analyses."
     },
     {
         "type": "peer-review",
@@ -102,5 +118,5 @@ var metadata = [
     }
 ]
 
-console.log("here it is",  metadata)
+
 

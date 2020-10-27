@@ -15,7 +15,9 @@
 <header>
     <div class="navBar">
         <div id="left">
-            <img src="img/HaynesLogo.png" height="60px" alt="David Haynes logo">
+            <a href="index.html">
+                <img src="img/HaynesLogo.png" height="60px" alt="David Haynes logo">
+            </a>
         </div>
         <div>
 
@@ -23,22 +25,20 @@
         <div class="navMenu">
             <ul>
                 <li>News</li>
-                <li>About</li>
+                <li class="dropDown">About</li>
+                <div class="menuItems invisible">
+                    <div class="menuDiv"><a href=publications.html>Publications</a></div>
+                    <div class="menuDiv">Research</div>
+                    <div class="menuDiv">Projects</div>
+                    <div class="menuDiv">Research</div>
+                    <div class="menuDiv">Teaching</div>
+                </div>
                 <li>Contact</li>
             </ul>
         </div>
     </div>
 </header>
-<!-- <script>
-    $(document).ready(function () {
-        $.getJSON("https://gist.github.com/dahaynes/a944c39f21c97fcd8d92c9eff7afc4c2.js", function (data) {
-            console.log(data.name); // Prints: Harry
-            console.log(data.age); // Prints: 14
-        }).fail(function () {
-            console.log("An error has occurred.");
-        });
-    });
-</script> -->
+
 <body>
 <!-- onload="javascript:loadMetaData()" -->
     <div class="heroContainer">
@@ -94,10 +94,7 @@
 
         </div>
     </div>
-
-    <div id="outputDiv">
-
-    </div>
+</div>
 
 
 
