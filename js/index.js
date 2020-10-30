@@ -85,11 +85,6 @@ $(document).ready(function () {
 
     });
 
-    $(".dropDown").on("click", function () {
-        /* console.log("I was clicked") */
-        $(".menuItems").slideToggle();
-
-    })
 
 
     
