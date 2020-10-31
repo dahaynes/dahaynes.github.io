@@ -1,5 +1,6 @@
 $(document).ready(function () {
-
+    
+    /* My animation */
     $(".myEmail").on("click", function () {
 
         /* $(".email").slideToggle(); */
@@ -9,6 +10,11 @@ $(document).ready(function () {
         $(".connectContent h1").text("Connected")
 
 
-    })
+    });
+
+    /* Code for the dropdown menu */
+    $(".dropDown").on("click", function () {
+        $(".menuItems").slideToggle();
+    });
 
 });
