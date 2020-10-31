@@ -356,6 +356,55 @@ footer{
 
 }
 
+.researchCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+.researchCard{
+    flex: 0 1 30%;
+    border: 1px black solid;
+    background-color: #E8FCC2;
+    min-width: 200px;
+    min-height: 200px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+
+/* tablets */
+@media only screen and (max-width: 768px) {
+
+    .researchCardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .researchCard{
+        flex: 0 0 40%;
+        
+    }
+}
+
+/* phones */
+@media only screen and (max-width: 600px){
+    .researchCardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .researchCard{
+        flex: 0 0 90%;
+        width: 500px;
+    }
+
+}
+
+
 #researchFooter{
     padding-top: 0px;
 }
