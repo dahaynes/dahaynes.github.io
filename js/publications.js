@@ -21,7 +21,7 @@ function loadMetaData(jsonArray) {
                             <div class="abstract">See the abstract</div>
                             <div class="articleHighlights">See Article Highlights</div>
                             ${highlighlist}
-                            <div class="citation">${arrayItem.cite}</div>
+                            <div class="citation"><a href="${arrayItem.cite}">Get BibText</a></div>
                             <div class="articleDescription invisible">${arrayItem.abstract}</div>
                             </div>`
         $("#outputDiv").append(articleCard)
@@ -48,17 +48,17 @@ $(document).ready(function () {
             $(this).siblings(".highlightText").addClass("invisible");
 
             $(this).siblings(".articleDescription").removeClass("invisible");
-            $(this).parent().css('grid-template-columns', 'repeat(6,fr);');
-            $(this).parent().css('grid-template-rows', 'repeat(5,fr);');
-            $(this).parent().css('grid-template-areas',
-                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite" "articleDescription articleDescription articleDescription articleDescription articleDescription articleDescription"');
+/*             $(this).parent(".articleCard").css('grid-template-columns', 'repeat(6,1fr);');
+            $(this).parent(".articleCard").css('grid-template-rows', 'repeat(5,1fr)');  */
+            $(this).parent(".articleCard").css('grid-template-areas',
+                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi cite . . abstract highlights" "articleDescription articleDescription articleDescription articleDescription articleDescription articleDescription"');
 
         } else {
             $(this).siblings(".articleDescription").addClass("invisible");
             $(this).siblings(".highlightText").addClass("invisible");
-            $(this).parent(".articleCard").css('grid-template-rows', 'repeat(4,fr);')
+            /* $(this).parent(".articleCard").css('grid-template-rows', '1fr 1fr 1fr 1fr') */
             $(this).parent(".articleCard").css('grid-template-areas',
-                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite"');
+                ' "articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi cite . . abstract highlights" "empty empty empty empty empty empty"');
         }
 
 
@@ -67,22 +67,22 @@ $(document).ready(function () {
     $(".articleHighlights").on("click", function () {
         //console.log("I was clicked")
         if ($(this).siblings(".highlightText").hasClass("invisible")) {
-            $(this).siblings(".articleDescription").addClass("invisible");
-            /* var t = $(this).siblings().hasClass("invisible"); */
-            console.log("Making visible")
+            /* This is the toggle */
+            $(this).siblings(".articleDescription").addClass("invisible");            
 
             $(this).siblings(".highlightText").removeClass("invisible");
-            $(this).parent(".articleCard").css('grid-template-columns', 'repeat(6,fr);');
-            $(this).parent(".articleCard").css('grid-template-rows', 'repeat(5,fr);');
+            $(this).parent(".articleCard").css('grid-template-columns', 'repeat(6,1fr);');
+            $(this).parent(".articleCard").css('grid-template-rows', 'repeat(5,1fr);');
+            /* $(this).parent(".articleCard").css('height', '300px'); */
             $(this).parent(".articleCard").css('grid-template-areas',
-                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite" "highlight0 highlight0 highlight1 highlight1 highlight2 highlight2"');
+                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi cite . . abstract highlights" "highlight0 highlight0 highlight1 highlight1 highlight2 highlight2"');
 
         } else {
             $(this).siblings(".highlightText").addClass("invisible");
             $(this).siblings(".articleDescription").addClass("invisible");
-            $(this).parent(".articleCard").css('grid-template-rows', 'repeat(4,fr);')
+            /* $(this).parent(".articleCard").css('grid-template-rows', '1fr 1fr 1fr 1fr') */
             $(this).parent(".articleCard").css('grid-template-areas',
-                '"articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi doi . abstract highlights cite"');
+                ' "articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle" "author author author author . articleYear" "articleJournal articleJournal articleJournal articleJournal articleJournal ." "doi cite . . abstract highlights"');
         }
 
 

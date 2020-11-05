@@ -261,31 +261,36 @@ footer{
   margin: 20px 20px;
   padding-left: 10px;
   display: grid;
-  min-height: 200px;
+  /* height: 200px; */
   width: 80%;
   border: black solid 1px;
   background-color: #E8FCC2;
-  grid-template-columns:  repeat(6,fr);   /* 2fr 1fr    repeat(12,fr)*/
-  grid-template-rows: repeat(4,fr);
+  grid-template-columns:  repeat(6,1fr);   /* 2fr 1fr    repeat(12,fr)*/
+  grid-template-rows: repeat(5,1fr);
   grid-template-areas: 
   "articleTitle articleTitle articleTitle articleTitle articleTitle articleTitle"
   "author author author author . articleYear"
   "articleJournal articleJournal articleJournal articleJournal articleJournal ."
-  "doi doi . abstract highlights cite";
+  "doi cite . . abstract highlights"
+  "empty empty empty empty empty empty";
+
 }
 
 .articleTitle {
     grid-area: articleTitle;
-    font-size: 40px;
+    font-size: 30px;
+    padding-bottom: 10px;
 }
 
 .author {
     grid-area: author;
     font-size: 16px;
+    padding-bottom: 5px;
 }
 
 .articleYear {
     grid-area: articleYear;
+    padding-bottom: 5px;
 
 }
 
@@ -311,11 +316,18 @@ footer{
 
 .citation{
     grid-area: cite;
+    
 }
 
-
+.empty{
+    grid-area: empty;
+    display: none;
+    height: 0px;
+    margin: -10px 0px -10px 0px;
+}
 .articleHighlights{
     grid-area: highlights;
+    cursor: pointer;
 }
 /* .highlightText{
     grid-area: highlightText;
